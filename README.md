@@ -1,5 +1,9 @@
 # Solenoid-Coil-Calculator
 A short MATLAB function calculating magnetic field parameters of an air-core solenoid coil using Biot-Savart law as a basis
+
+![fig1](https://github.com/user-attachments/assets/6af4477c-427c-4134-b00d-e4dc92d716ca)
+
+
 ```
 [B,Bx,By,Bz,H,Hx,Hy,Hz,TotalWireLength,Inductance,Resistance]=CoilCalculator(CoilLength,CoilNumber,CoilLayers,CoilDiameter,CoilPrecision,CalculationZone,RelativePermeability,Current,MaterialResistivity)
 ```
