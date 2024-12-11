@@ -1,7 +1,7 @@
 # Solenoid-Coil-Calculator
 A short MATLAB function calculating magnetic field parameters of an air-core solenoid coil using Biot-Savart law as a basis
 ```
-[B,Bx,By,Bz,H,Hx,Hy,Hz,TotalWireLength,Inductance,Resistance]=CoilCalculator(CoilLength,CoilNumber,CoilLayers,CoilDiameter,CoilPrecision,CalculationZone,RelativePermeability,RelativePermittivity,MaterialResistivity)
+[B,Bx,By,Bz,H,Hx,Hy,Hz,TotalWireLength,Inductance,Resistance]=CoilCalculator(CoilLength,CoilNumber,CoilLayers,CoilDiameter,CoilPrecision,CalculationZone,RelativePermeability,Current,MaterialResistivity)
 ```
 - CoilLenght - total length of the solenoid
 - CoilNumber - amount of individual coils in a single layer of the solenoid
@@ -12,7 +12,7 @@ A short MATLAB function calculating magnetic field parameters of an air-core sol
     `[X, Y, Z, STEP]`\
 STEP - if set as `-` calculation space is set to calculate magnetic field properties only in the point specified by coordinates X, Y, Z. If STEP is set to any number smaller than the smallest of other 3 values, program will create calculation mesh where X, Y and Z are sizes of a cuboid with center in 0,0,0 and STEP as the step between calculation points.
 - RelativePermeability - relative magnetic permeability of the space around the solenoid
-- RelativePermittivity - relative electrical permittivity of the wire
+- Current - current flowing through the wire
 - MaterialResistivity - resistivity of the wire
 
 - B - scalar magnetic flux density
