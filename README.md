@@ -5,15 +5,16 @@ A short MATLAB function calculating magnetic field parameters of an air-core sol
 
 
 ```
-[B,Bx,By,Bz,H,Hx,Hy,Hz,TotalWireLength,MagneticFlux,Inductance,Resistance]=CoilCalculator(CoilLength,CoilNumber,CoilLayers,CoilDiameter,CoilPrecision,CalculationZone,RelativePermeability,Current,MaterialResistivity)
+[B,Bx,By,Bz,H,Hx,Hy,Hz,TotalWireLength,MagneticFlux,Inductance,Resistance]=CoilCalculator(CoilLength,CoilNumber,CoilLayers,CoilDiameter,WireDiameter,CoilPrecision,CalculationZone,RelativePermeability,Current,MaterialResistivity)
 ```
 - CoilLenght - total length of the solenoid
 - CoilNumber - amount of individual coils in a single layer of the solenoid
 - CoilLayers - number of wire coil layers
 - CoilDiameter - diameter of first layer
+- WireDiameter - diameter of the coil wire
 - CoilPrecision - number of corners 1 coil has, higher number gives higher calculation accuracy (I recommend to set it at least 25)
 - CalculationZone - 4 dimentional vector that sets up calculation space: \
-    `[X, Y, Z STEP]`\
+    `[X, Y, Z STEP]`
 - CalculationZoneSTEP - if set as `-` calculation space is set to calculate magnetic field properties only in the point specified by coordinates X, Y, Z. If STEP is set to any number smaller than the smallest of other 3 values, program will create calculation mesh where X, Y and Z are dimensions of a cuboid with center in 0,0,0 and STEP as the distance between calculation points.
 - RelativePermeability - relative magnetic permeability of the space around the solenoid
 - Current - current flowing through the wire
@@ -30,4 +31,4 @@ A short MATLAB function calculating magnetic field parameters of an air-core sol
 NOTE: MagneticFlux and Inductance are calculated only if user sets up the function to calculate magnetic field around the coil and won't be initiated otherwise
 
 # Usage
-Download the .m or .p file and run it as a function in either MATLAB or GNU Octave
+Download the .m file and run it as any other function in either MATLAB or GNU Octave
