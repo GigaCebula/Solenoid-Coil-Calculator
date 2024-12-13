@@ -1,6 +1,6 @@
 function [B,Bx,By,Bz,H,Hx,Hy,Hz,TotalWireLength,MagneticFlux,Inductance,Resistance]=CoilCalculator(CoilLength,CoilNumber,CoilLayers,CoilDiameter,WireDiameter,CoilPrecision,CalculationZone,CalculationZoneSTEP,RelativePermeability,Current,MaterialResistivity)
 tic
-mu0=4*pi*10e-7;
+mu0=pi*4e-7;
 mu=mu0*RelativePermeability;
 alpha = 2*pi/CoilPrecision;
 x(1:CoilPrecision*CoilNumber*CoilLayers)=NaN;
