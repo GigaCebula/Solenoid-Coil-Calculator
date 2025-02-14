@@ -13,12 +13,12 @@ n=0;
 
 % Tworzenie geometrii cewki 
 
-    if WireDiameter < CoilLength/CoilNumber   
+    if WireDiameter < CoilLength/CoilNumber || CoilNumber == 1
         for CurrentLayer=1:CoilLayers
             for j=1:CoilPrecision*CoilNumber
                   n=n+1;
-                  x(n)=((CoilDiameter/2)+(WireDiameter*CurrentLayer))*cos(alpha*j);
-                  y(n)=((CoilDiameter/2)+(WireDiameter*CurrentLayer))*sin(alpha*j);
+                  x(n)=((CoilDiameter/2)+((WireDiameter/2)*CurrentLayer))*cos(alpha*j);
+                  y(n)=((CoilDiameter/2)+((WireDiameter/2)*CurrentLayer))*sin(alpha*j);
                   z(n)=(-CoilLength/2)+(CoilLength*j)/(CoilPrecision*CoilNumber);
             end
         end
@@ -44,7 +44,7 @@ PointDistance(1:length(x)-1)=zeros;
             end
         end
 TotalWireLength=sum(PointDistance);
-Resistance=MaterialResistivity*(TotalWireLength/(WireDiameter^2*pi));
+Resistance=MaterialResistivity*(TotalWireLength/((WireDiameter/2)^2*pi));
 
 % Tworzenie macierzy strefy obliczeniowej
 
